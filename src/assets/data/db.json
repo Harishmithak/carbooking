@@ -1,0 +1,40 @@
+{
+  "signup": [
+    {
+      "fname": "hari",
+      "lname": "harishmitha",
+      "email": "kharish@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "userType": "user",
+      "id": 1
+    },
+    {
+      "fname": "yamini",
+      "lname": "priya",
+      "email": "yamini@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "userType": "user",
+      "id": 2
+    }
+  ],
+  "ridedetails": [
+    {
+      "pickup": "gandhipuram",
+      "destination": "ganapathy",
+      "date": "2023-07-28",
+      "time": "11:38",
+      "user": "hari",
+      "id": 1
+    },
+    {
+      "pickup": "gandhipuram",
+      "destination": "perur",
+      "date": "2023-07-28T18:30:00.000Z",
+      "time": "2023-07-28T12:01:59.516Z",
+      "user": "hari",
+      "id": 2
+    }
+  ]
+}
