@@ -5,7 +5,7 @@
     <div class="container" id="cont">
       <div class="row">
         <div class="col-12 py-5 shadow mb-5 my-custom-shadow">
-          <h2 class="ms-5 mb-3" style="color: #978F8F; font-size: 27px;">Login with UBER</h2>
+          <h2 class="ms-5 mb-3" style="color: #978F8F; font-size: 27px;">Login with UBER AS A DRIVER</h2>
           <form class="login-form" @submit="submitForm">
             <div class="form-group">
               <input v-model="username" class="w-100" type="text" placeholder="Username" />
@@ -28,7 +28,7 @@
             <div class="d-flex justify-content-center mt-2">
               <p class="mt-3 text-center" style="font-size: 13px; color: #978F8F;">
                 Doesn't have an account?
-                <router-link to="/register" class="text-black w-25">Register</router-link>
+                <router-link to="/dreg" class="text-black w-25">Register</router-link>
               </p>
             </div>
             <p v-if="errorMessage" class="mt-3 text-center" style="font-size: 13px; color: red;">{{ errorMessage }}</p>
@@ -55,8 +55,8 @@
       return {
         username: '',
         password: '',
-        errorMessage: '',
-        userType: 'user'
+        errorMessage: ''
+    
         
       };
     },
@@ -64,11 +64,11 @@
     methods: {
       ...mapActions(['login']),
       submitForm(event) {
-        // Swal.fire('login successfull');
+ 
         event.preventDefault();
   
         axios
-          .get('http://localhost:3000/signup')
+          .get('http://localhost:3000/driverregister')
           .then(response => {
             const users = response.data;
   
@@ -81,15 +81,12 @@
           .then(() => {
             Swal.fire('logged in');
            
-            if (this.userType==='user' && user.userType==='user' ) {
-            this.$router.push('/');
+            if (user.userType==='driver' ) {
+            this.$router.push('/driver');
           }
-          else if(this.username==='admin@gmail.com' && this.password ==='123456' ) {
-                      this.$router.push('/admin');
-                    }
+    
         
-          }
-          )}
+          })}
           
         }
      

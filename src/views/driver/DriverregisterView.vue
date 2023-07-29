@@ -5,7 +5,7 @@
     <div class="container2" id="cont" style="margin-bottom: 250px;">
       <div class="row">
         <div class="col-12 py-1 shadow mt-5">
-          <h3 class="ms-4 pb-3" style="color: #978F8F;">Sign Up with UBER</h3>
+          <h3 class="ms-4 pb-3" style="color: #978F8F;">Sign Up with UBER AS A DRIVER</h3>
           <form class="registration-form" style="color: #978F8F;">
             <div class="form-group">
               <input type="text" v-model="formData.fname" class="form-control" placeholder="First name" required />
@@ -42,11 +42,17 @@
               <span v-if="vc$.confirm.$error">{{ vc$.confirm.$errors[0].$message }} {{ formData.confirm }}</span>
   
             </div>
+            <div class="form-group">
+              <input type="text" v-model="formData.cnum" class="form-control" placeholder="CAR NUMBER" required />
+  
+              <span v-if="vc$.cnum.$error">{{ vc$.cnum.$errors[0].$message }}</span>
+  
+            </div>
   
             <div class="form-group">
               <label>
-                <input type="radio" v-model="formData.userType" value="user" />
-                User
+                <input type="radio" v-model="formData.userType" value="driver" />
+                DRIVER
               </label>
               <!-- <label>
                 <input type="radio" v-model="formData.userType" value="admin" />
@@ -87,6 +93,7 @@
         email: '',
         password: '',
         confirm: '',
+        cnum:'',
         userType: '',
   
       });
@@ -100,6 +107,7 @@
           email: { required, email },
           password: { required, minLength: minLength(6), maxLength: maxLength(10) },
           confirm: { required },
+          cnum:{ required },
           userType: { required },
         };
       });
@@ -119,7 +127,7 @@
         this.vc$.$validate();
   
         if (!this.vc$.$error && this.formData.password === this.formData.confirm) {
-          axios.post('http://localhost:3000/signup', this.formData) 
+          axios.post('http://localhost:3000/driverregister', this.formData) 
   
             .then(response => {
               console.log(response.data);

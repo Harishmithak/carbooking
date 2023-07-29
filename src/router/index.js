@@ -36,7 +36,31 @@ const routes = [
         next('/login');
       }
     }
-  }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    
+    component: () => import( '../views/admin/AdminView.vue')
+  },
+  {
+    path: '/dreg',
+    name: 'dreg',
+    
+    component: () => import( '../views/driver/DriverregisterView.vue')
+  },
+  {
+    path: '/driver',
+    name: 'driver',
+    
+    component: () => import( '../views/driver/DriverView.vue')
+  },
+  {
+    path: '/dlogin',
+    name: 'dlogin',
+    
+    component: () => import( '../views/driver/DriverloginView.vue')
+  },
 ]
 
 const router = createRouter({

@@ -17,23 +17,60 @@
       "confirm": "123456",
       "userType": "user",
       "id": 2
+    },
+    {
+      "fname": "admin",
+      "lname": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "id": 3
     }
   ],
   "ridedetails": [
+
     {
-      "pickup": "gandhipuram",
-      "destination": "ganapathy",
-      "date": "2023-07-28",
-      "time": "11:38",
+      "pickup": "ganapathy",
+      "destination": "rs puram",
+      "date": "31/07/2023",
+      "time": "12:14 PM",
+      "user": "yamini",
+      "status": "accepted",
+      "cnum": "TN36A2345",
+      "fname": "ranita",
+      "id": 2
+    },
+    {
+      "pickup": "race course ",
+      "destination": "townhall",
+      "date": "29/07/2023",
+      "time": "12:44 PM",
       "user": "hari",
+      "status": "accepted",
+      "cnum": "TN36A2345",
+      "fname": "ranita",
+      "id": 3
+    }
+  ],
+  "driverregister": [
+    {
+      "fname": "ranita",
+      "lname": "n",
+      "email": "ranita@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "cnum": "TN36A2345",
+      "userType": "driver",
       "id": 1
     },
     {
-      "pickup": "gandhipuram",
-      "destination": "perur",
-      "date": "2023-07-28T18:30:00.000Z",
-      "time": "2023-07-28T12:01:59.516Z",
-      "user": "hari",
+      "fname": "harita",
+      "lname": "n",
+      "email": "harita@gmail.com",
+      "password": "123456",
+      "confirm": "123456",
+      "cnum": "tn23th4567",
+      "userType": "driver",
       "id": 2
     }
   ]
